@@ -2,11 +2,11 @@
   "name": "meeting-room-booking",
   "version": "1.0.0",
   "description": "Meeting room booking app",
-  "main": "src/server.js",
+  "main": "src/local.js",
   "type": "module",
   "scripts": {
-    "start": "node src/server.js",
-    "dev": "node --watch src/server.js",
+    "start": "node src/local.js",
+    "dev": "node --watch src/local.js",
     "seed": "node src/db/seed.js",
     "test": "node --test src/**/*.test.js"
   },

@@ -17,14 +17,6 @@ Open **http://localhost:3000**
 3. **Owner / Admin:** **Reports** tab for summaries
 4. **Admin:** **Admin** tab to add users, change roles, or delete users (their bookings are removed too)
 
-### Deployed URL
-
-If hosted online, open:
-
-**`https://YOUR-DEPLOY-URL`** ← replace after deploy
-
-Same steps as above. Health check: `GET /api/health`
-
 ### Test users
 
 | Name | Role | Login id |
@@ -33,6 +25,15 @@ Same steps as above. Health check: `GET /api/health`
 | Owen Owner | owner | `u-owner-1` |
 | Uma User | user | `u-user-1` |
 | Victor Visitor | user | `u-user-2` |
+
+### Vercel
+
+1. Push repo, import in Vercel (root = folder with `package.json`)
+2. Framework: **Other** (or Express if offered) — leave output directory empty
+3. Entry files: **`api/index.js`** and **`src/index.js`** (both import `express` — required by Vercel)
+4. Redeploy; use “Clear cache and redeploy” if an old error persists
+
+SQLite on Vercel uses `/tmp` and may reset on cold starts.
 
 ### Requirements
 
