@@ -8,7 +8,10 @@ export const config = {
   port: Number(process.env.PORT) || 3000,
   nodeEnv: process.env.NODE_ENV || 'development',
   databasePath:
-    process.env.DATABASE_PATH || path.join(rootDir, 'data', 'meeting_room.db'),
+    process.env.DATABASE_PATH ||
+    (process.env.VERCEL
+      ? '/tmp/meeting_room.db'
+      : path.join(rootDir, 'data', 'meeting_room.db')),
   corsOrigin: process.env.CORS_ORIGIN || true,
   isProduction: process.env.NODE_ENV === 'production',
 };
