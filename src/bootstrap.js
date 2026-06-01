@@ -3,9 +3,10 @@ import { config } from './config/index.js';
 
 let ready = false;
 
-export function bootstrap() {
+export async function bootstrap() {
   if (ready) return;
-  initDatabase(config.databasePath);
+
+  await initDatabase(config.databasePath);
 
   const count = getDb().prepare('SELECT COUNT(*) AS c FROM users').get().c;
   if (count === 0) {

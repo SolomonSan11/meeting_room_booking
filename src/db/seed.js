@@ -8,15 +8,15 @@ const SEED_USERS = [
   { id: 'u-user-2', name: 'Victor Visitor', role: 'user' },
 ];
 
-initDatabase(config.databasePath);
+await initDatabase(config.databasePath);
 const db = getDb();
 
 const insertUser = db.prepare(
-  `INSERT OR IGNORE INTO users (id, name, role) VALUES (@id, @name, @role)`
+  'INSERT OR IGNORE INTO users (id, name, role) VALUES (?, ?, ?)'
 );
 
 for (const user of SEED_USERS) {
-  insertUser.run(user);
+  insertUser.run(user.id, user.name, user.role);
 }
 
 console.log('done:', SEED_USERS.map((u) => u.id).join(', '));

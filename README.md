@@ -33,7 +33,7 @@ Open **http://localhost:3000**
 3. Entry files: **`api/index.js`** and **`src/index.js`** (both import `express` — required by Vercel)
 4. Redeploy; use “Clear cache and redeploy” if an old error persists
 
-SQLite on Vercel uses `/tmp` and may reset on cold starts.
+On Vercel the app uses **sql.js** (not native SQLite) so the DB file in `/tmp` may reset on cold starts. Local `npm start` still uses **better-sqlite3**.
 
 ### Requirements
 

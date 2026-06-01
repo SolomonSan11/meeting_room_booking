@@ -2,7 +2,7 @@ import express from 'express';
 import { createApp } from './httpApp.js';
 import { bootstrap } from './bootstrap.js';
 
-bootstrap();
+await bootstrap();
 
 const app = createApp();
 

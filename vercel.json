@@ -5,7 +5,7 @@
       "src": "api/index.js",
       "use": "@vercel/node",
       "config": {
-        "includeFiles": ["public/**", "src/**"]
+        "includeFiles": ["public/**", "src/**", "node_modules/sql.js/dist/**"]
       }
     }
   ],

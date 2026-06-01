@@ -3,7 +3,7 @@ import { bootstrap } from './bootstrap.js';
 import { config } from './config/index.js';
 import { closeDatabase } from './db/database.js';
 
-bootstrap();
+await bootstrap();
 
 const app = createApp();
 
